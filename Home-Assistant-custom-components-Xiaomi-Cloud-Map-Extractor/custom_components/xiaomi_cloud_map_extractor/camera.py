@@ -180,6 +180,7 @@ class VacuumCamera(Camera):
         self._store_map_image = store_map_image
         self._store_map_path = store_map_path
         self._forced_api = force_api
+        self._unique_id = f"{username}_{name}"
         self._used_api = None
         self._map_saved = None
         self._image = None
@@ -201,6 +202,10 @@ class VacuumCamera(Camera):
     @property
     def name(self) -> str:
         return self._name
+
+    @property
+    def unique_id(self) -> Optional[str]:
+        return self._unique_id
 
     def turn_on(self):
         self._should_poll = True
