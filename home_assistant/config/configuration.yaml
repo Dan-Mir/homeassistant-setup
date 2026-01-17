@@ -1,0 +1,54 @@
+# Home Assistant Configuration
+
+# Load frontend
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+    language: 'it'
+
+# Enable lovelace
+lovelace:
+  mode: storage
+
+# Enable logger
+logger:
+  default: info
+
+# Enable recorder
+recorder:
+  purge_keep_days: 7
+
+# Enable history
+history:
+
+# Enable system health
+system_health:
+
+# Enable energy
+energy:
+
+# HTTP configuration
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 127.0.0.1
+    - ::1
+
+# Automation and scripts
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+# Xiaomi Cloud Map Extractor Camera
+camera:
+  - platform: xiaomi_cloud_map_extractor
+    host: !secret viomi_host
+    token: !secret viomi_token
+    username: !secret xiaomi_username
+    password: !secret xiaomi_password
+    draw: ['all']
+    attributes:
+      - calibration_points
+    country: "de"
