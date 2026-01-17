@@ -386,6 +386,46 @@ deactivate
 
 ## 💻 Comandi Utili
 
+### Switchare Container tra Directory
+
+Se lavori su più branch/directory (`Domotica_main` e `Domotica_jules_branch`), usa questi comandi per spostare il container da una directory all'altra.
+
+#### Da Domotica_main a Domotica_jules_branch
+
+```bash
+# 1. Ferma e rimuovi il container dalla directory corrente
+cd /home/danym/Desktop/Domotica_main
+docker stop home-assistant
+docker rm home-assistant
+
+# 2. Avvia il container dalla nuova directory
+cd /home/danym/Desktop/Domotica_jules_branch
+docker-compose up -d
+
+# 3. Verifica che sia attivo
+docker ps | grep home-assistant
+```
+
+#### Da Domotica_jules_branch a Domotica_main
+
+```bash
+# 1. Ferma e rimuovi il container dalla directory corrente
+cd /home/danym/Desktop/Domotica_jules_branch
+docker stop home-assistant
+docker rm home-assistant
+
+# 2. Avvia il container dalla nuova directory
+cd /home/danym/Desktop/Domotica_main
+docker-compose up -d
+
+# 3. Verifica che sia attivo
+docker ps | grep home-assistant
+```
+
+**Nota**: `docker-compose down` potrebbe non funzionare se il container è stato avviato da un'altra directory. In tal caso, usa sempre `docker stop` + `docker rm`.
+
+---
+
 ### Docker - Home Assistant
 
 ```bash
