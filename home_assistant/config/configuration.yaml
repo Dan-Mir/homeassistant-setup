@@ -40,3 +40,15 @@ http:
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+# Xiaomi Cloud Map Extractor Camera
+camera:
+  - platform: xiaomi_cloud_map_extractor
+    host: !secret viomi_host
+    token: !secret viomi_token
+    username: !secret xiaomi_username
+    password: !secret xiaomi_password
+    draw: ['all']
+    attributes:
+      - calibration_points
+    country: "de"
