@@ -15,6 +15,12 @@ home_assistant/config/www/
 home_assistant/config/custom_components/hacs/
 home_assistant/config/custom_components/xiaomi_miot/
 home_assistant/config/custom_components/xiaomi_cloud_map_extractor/
+home_assistant/config/secrets.yaml
+home_assistant/config/*.log
+home_assistant/config/*.log.*
+home_assistant/config/*.db
+home_assistant/config/*.db-shm
+home_assistant/config/*.db-wal
 
 # Voice / AI runtime
 whisper-data/
