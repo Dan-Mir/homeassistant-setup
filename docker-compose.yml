@@ -4,6 +4,7 @@ services:
   homeassistant:
     container_name: home-assistant
     image: homeassistant/home-assistant:latest
+    user: "1000:1000"
     volumes:
       - ./home_assistant/config:/config
       - /run/dbus:/run/dbus:ro
