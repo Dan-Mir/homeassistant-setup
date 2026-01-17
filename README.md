@@ -238,10 +238,10 @@ scene: !include scenes.yaml
 Il file `docker-compose.yml` è già configurato con:
 
 - **Network Mode**: `host` (accesso diretto alla rete locale)
-- **Volumes**:
+- **Volumes**: 
   - `./home_assistant/config:/config` (configurazione persistente)
   - `/run/dbus:/run/dbus:ro` (comunicazione D-Bus)
-- **Environment**:
+- **Environment**: 
   - `TZ=Europe/Rome` (timezone italiano)
 - **Privileged**: Abilitato per accesso hardware
 - **Restart Policy**: `unless-stopped`
