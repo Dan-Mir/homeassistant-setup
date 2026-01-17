@@ -1,0 +1,42 @@
+# Home Assistant Configuration
+
+# Load frontend
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+    language: 'it'
+
+# Enable lovelace
+lovelace:
+  mode: storage
+
+# Enable logger
+logger:
+  default: info
+
+# Enable recorder
+recorder:
+  purge_keep_days: 7
+
+# Enable history
+history:
+
+# Enable system health
+system_health:
+
+# Enable energy
+energy:
+
+# HTTP configuration
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 127.0.0.1
+    - ::1
+
+# Automation and scripts
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
