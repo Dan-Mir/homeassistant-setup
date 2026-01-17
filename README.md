@@ -175,6 +175,16 @@ docker ps | grep home-assistant
 docker logs -f home-assistant
 ```
 
+### Riavvio
+
+```bash
+# Riavvia Home Assistant (dopo modifiche configurazione)
+docker-compose restart
+
+# Oppure riavvia solo il container
+docker restart home-assistant
+```
+
 ### Accesso all'Interfaccia
 
 Apri il browser e vai a:
