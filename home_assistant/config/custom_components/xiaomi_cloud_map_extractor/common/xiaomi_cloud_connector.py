@@ -128,8 +128,6 @@ class XiaomiCloudConnector:
     def login(self) -> bool:
         self._session.close()
         self._session = requests.session()
-        self._agent = self.generate_agent()
-        self._device_id = self.generate_device_id()
         self._session.cookies.set("sdkVersion", "accountsdk-18.8.15", domain="mi.com")
         self._session.cookies.set("sdkVersion", "accountsdk-18.8.15", domain="xiaomi.com")
         self._session.cookies.set("deviceId", self._device_id, domain="mi.com")
@@ -290,11 +288,7 @@ class XiaomiCloudConnector:
 
     @staticmethod
     def generate_agent() -> str:
-        agent_id = "".join(
-            map(lambda i: chr(i), [random.randint(65, 69) for _ in range(13)])
-        )
-        random_text = "".join(map(lambda i: chr(i), [random.randint(97, 122) for _ in range(18)]))
-        return f"{random_text}-{agent_id} APP/com.xiaomi.mihome APPV/10.5.201"
+        return "Android-14-1.0.0-Pixel 8 Pro-136-ss APP/com.xiaomi.mihome APPV/9.5.700"
 
     @staticmethod
     def generate_device_id() -> str:

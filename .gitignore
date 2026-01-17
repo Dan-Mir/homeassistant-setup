@@ -14,7 +14,6 @@ home_assistant/config/tts/
 home_assistant/config/www/
 home_assistant/config/custom_components/hacs/
 home_assistant/config/custom_components/xiaomi_miot/
-home_assistant/config/custom_components/xiaomi_cloud_map_extractor/
 home_assistant/config/secrets.yaml
 home_assistant/config/*.log
 home_assistant/config/*.log.*
